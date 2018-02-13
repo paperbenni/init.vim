@@ -20,7 +20,9 @@ endif
   Plug 'pangloss/vim-javascript'
   Plug 'sbdchd/neoformat'
   Plug 'neomake/neomake'
-
+  Plug 'floobits/floobits-neovim'
+  Plug 'terryma/vim-multiple-cursors'
+  Plug 'tpope/vim-surround'
 call plug#end()
 
 call neomake#configure#automake('w')
@@ -41,13 +43,27 @@ set foldlevelstart=10
 set foldnestmax=10      " 10 nested fold max
 nnoremap <space> za
 set foldmethod=indent   " fold based on indent level
-
+set lazyredraw
+set tabstop=4       " number of visual spaces per TAB
+set softtabstop=4   " number of spaces in tab when editing
+set expandtab       " tabs are spaces
+set synmaxcol=128
+syntax sync minlines=256
+set cursorline
 if has('win32')
    let g:python2_host_prog='C:\Users\benja\Envs\nvim2\Scripts\python.exe'
    let g:python3_host_prog='C:\Users\benja\Envs\nvim3\Scripts\python.exe'
 endif
 
 cd ~/workspace
+
+function! Multiple_cursors_before()
+    let b:deoplete_disable_auto_complete = 1
+endfunction
+
+function! Multiple_cursors_after()
+    let b:deoplete_disable_auto_complete = 0
+endfunction
 
 " Plugin key-mappings.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
