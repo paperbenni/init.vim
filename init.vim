@@ -16,9 +16,14 @@ endif
   Plug 'tpope/vim-fugitive'
   Plug 'Shougo/neosnippet'
   Plug 'Shougo/neosnippet-snippets'
-  Plug 'scrooloose/syntastic'
   Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+  Plug 'pangloss/vim-javascript'
+  Plug 'sbdchd/neoformat'
+  Plug 'neomake/neomake'
+
 call plug#end()
+
+call neomake#configure#automake('w')
 
 let g:deoplete#enable_at_startup = 1
 let g:airline_theme='onedark'
@@ -29,6 +34,13 @@ colorscheme onedark
 
 set number
 set numberwidth=4  
+set incsearch
+set smartcase
+set foldenable          " enable folding
+set foldlevelstart=10
+set foldnestmax=10      " 10 nested fold max
+nnoremap <space> za
+set foldmethod=indent   " fold based on indent level
 
 if has('win32')
    let g:python2_host_prog='C:\Users\benja\Envs\nvim2\Scripts\python.exe'
@@ -51,11 +63,3 @@ if exists('g:plugs["tern_for_vim"]')
 endif
 
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
