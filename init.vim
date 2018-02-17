@@ -23,6 +23,11 @@ endif
   Plug 'floobits/floobits-neovim'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-repeat'
+  Plug 'nathanaelkane/vim-indent-guides'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'ryanoasis/vim-devicons'
+  Plug 'mattn/gist-vim'
 call plug#end()
 
 call neomake#configure#automake('w')
@@ -31,16 +36,20 @@ let g:deoplete#enable_at_startup = 1
 let g:airline_theme='onedark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:indent_guides_enable_on_vim_startup = 1
+hi IndentGuidesOdd  ctermbg=black
+hi IndentGuidesEven ctermbg=darkgrey
 
 colorscheme onedark
 
 set number
 set numberwidth=4  
 set incsearch
-set smartcase
 set foldenable          " enable folding
 set foldlevelstart=10
 set foldnestmax=10      " 10 nested fold max
+
+    set fillchars=vert:┃ 
 nnoremap <space> za
 set foldmethod=indent   " fold based on indent level
 set lazyredraw
@@ -48,6 +57,7 @@ set tabstop=4       " number of visual spaces per TAB
 set softtabstop=4   " number of spaces in tab when editing
 set expandtab       " tabs are spaces
 set synmaxcol=128
+set background=dark
 syntax sync minlines=256
 set cursorline
 if has('win32')
