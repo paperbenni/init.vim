@@ -12,8 +12,8 @@ endif
   Plug 'vim-airline/vim-airline-themes'
   Plug 'joshdick/onedark.vim'
   Plug 'jiangmiao/auto-pairs'
-  Plug 'kien/ctrlp.vim'
   Plug 'tpope/vim-fugitive'
+  Plug 'shougo/denite.nvim'
   Plug 'Shougo/neosnippet'
   Plug 'Shougo/neosnippet-snippets'
   Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
@@ -30,7 +30,10 @@ endif
   Plug 'mattn/gist-vim'
 call plug#end()
 
+let g:gitgutter_grep=''
+let g:gitgutter_max_signs = 500  
 call neomake#configure#automake('w')
+
 
 let g:deoplete#enable_at_startup = 1
 let g:airline_theme='onedark'
