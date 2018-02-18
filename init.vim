@@ -46,6 +46,7 @@ hi IndentGuidesEven ctermbg=darkgrey
 colorscheme onedark
 
 set number
+set termguicolors
 set numberwidth=4  
 set incsearch
 set foldenable          " enable folding
