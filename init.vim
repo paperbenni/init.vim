@@ -9,6 +9,7 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
   Plug 'vim-airline/vim-airline'
+  Plug 'chrisbra/Colorizer'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'joshdick/onedark.vim'
   Plug 'jiangmiao/auto-pairs'
@@ -24,10 +25,25 @@ endif
   Plug 'terryma/vim-multiple-cursors'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-repeat'
-  Plug 'nathanaelkane/vim-indent-guides'
   Plug 'airblade/vim-gitgutter'
   Plug 'ryanoasis/vim-devicons'
   Plug 'mattn/gist-vim'
+  Plug 'icymind/NeoSolarized'
+  Plug 'mattn/emmet-vim'
+  Plug 'kien/ctrlp.vim'
+  Plug 'scrooloose/nerdtree'
+
+function! BuildComposer(info)
+  if a:info.status != 'unchanged' || a:info.force
+    if has('nvim')
+      !cargo build --release
+    else
+      !cargo build --release --no-default-features --features json-rpc
+    endif
+  endif
+endfunction
+
+Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
 call plug#end()
 
 let g:gitgutter_grep=''
@@ -39,9 +55,6 @@ let g:deoplete#enable_at_startup = 1
 let g:airline_theme='onedark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:indent_guides_enable_on_vim_startup = 1
-hi IndentGuidesOdd  ctermbg=black
-hi IndentGuidesEven ctermbg=darkgrey
 
 colorscheme onedark
 
@@ -49,6 +62,9 @@ set number
 set termguicolors
 set numberwidth=4  
 set incsearch
+set ignorecase
+set gdefault
+set smartcase
 set foldenable          " enable folding
 set foldlevelstart=10
 set foldnestmax=10      " 10 nested fold max
@@ -70,6 +86,8 @@ if has('win32')
 endif
 
 cd ~/workspace
+
+autocmd VimEnter * ColorToggle
 
 function! Multiple_cursors_before()
     let b:deoplete_disable_auto_complete = 1
