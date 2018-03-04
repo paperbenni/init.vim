@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/benjamin/workspace/ModPackPE.github.io/_layouts'
+let g:netrw_dirhist_2='/home/benjamin/workspace/ModPackPE.github.io'
+let g:netrw_dirhist_3='/home/benjamin/workspace/ModPackPE.github.io/_layouts'
+let g:netrw_dirhist_4='/home/benjamin/workspace/ModPackPE.github.io'
+let g:netrw_dirhist_5='/home/benjamin/workspace/ModPackPE.github.io/assets'
+let g:netrw_dirhist_6='/home/benjamin/workspace/ModPackPE.github.io/assets/css'

@@ -28,6 +28,7 @@ endif
   Plug 'airblade/vim-gitgutter'
   Plug 'ryanoasis/vim-devicons'
   Plug 'mattn/gist-vim'
+  Plug 'ap/vim-css-color'
 call plug#end()
 
 let g:gitgutter_grep=''
