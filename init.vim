@@ -1,4 +1,3 @@
-
 call plug#begin('~/.local/share/nvim/plugged')
 
 if has('nvim')
@@ -24,11 +23,26 @@ endif
   Plug 'terryma/vim-multiple-cursors'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-repeat'
-  Plug 'nathanaelkane/vim-indent-guides'
   Plug 'airblade/vim-gitgutter'
   Plug 'ryanoasis/vim-devicons'
   Plug 'mattn/gist-vim'
   Plug 'ap/vim-css-color'
+  Plug 'icymind/NeoSolarized'
+  Plug 'mattn/emmet-vim'
+  Plug 'kien/ctrlp.vim'
+  Plug 'scrooloose/nerdtree'
+
+function! BuildComposer(info)
+  if a:info.status != 'unchanged' || a:info.force
+    if has('nvim')
+      !cargo build --release
+    else
+      !cargo build --release --no-default-features --features json-rpc
+    endif
+  endif
+endfunction
+Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
+
 call plug#end()
 
 let g:gitgutter_grep=''
@@ -37,19 +51,19 @@ call neomake#configure#automake('w')
 
 
 let g:deoplete#enable_at_startup = 1
-let g:airline_theme='onedark'
+let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:indent_guides_enable_on_vim_startup = 1
-hi IndentGuidesOdd  ctermbg=black
-hi IndentGuidesEven ctermbg=darkgrey
 
-colorscheme onedark
+colorscheme NeoSolarized
 
 set number
 set termguicolors
 set numberwidth=4  
 set incsearch
+set ignorecase
+set smartcase
+set gdefault
 set foldenable          " enable folding
 set foldlevelstart=10
 set foldnestmax=10      " 10 nested fold max
@@ -64,13 +78,13 @@ set expandtab       " tabs are spaces
 set synmaxcol=128
 set background=dark
 syntax sync minlines=256
-set cursorline
 if has('win32')
    let g:python2_host_prog='C:\Users\benja\Envs\nvim2\Scripts\python.exe'
    let g:python3_host_prog='C:\Users\benja\Envs\nvim3\Scripts\python.exe'
 endif
 
 cd ~/workspace
+
 
 function! Multiple_cursors_before()
     let b:deoplete_disable_auto_complete = 1
