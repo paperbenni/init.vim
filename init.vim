@@ -13,8 +13,6 @@ endif
   Plug 'jiangmiao/auto-pairs'
   Plug 'tpope/vim-fugitive'
   Plug 'shougo/denite.nvim'
-  Plug 'Shougo/neosnippet'
-  Plug 'Shougo/neosnippet-snippets'
   Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
   Plug 'pangloss/vim-javascript'
   Plug 'sbdchd/neoformat'
@@ -31,6 +29,7 @@ endif
   Plug 'mattn/emmet-vim'
   Plug 'kien/ctrlp.vim'
   Plug 'scrooloose/nerdtree'
+  Plug 'machakann/vim-highlightedyank'
 
 function! BuildComposer(info)
   if a:info.status != 'unchanged' || a:info.force
@@ -71,8 +70,11 @@ set foldenable          " enable folding
 set foldlevelstart=10
 set foldnestmax=10      " 10 nested fold max
 
-    set fillchars=vert:┃ 
+set fillchars=vert:┃ 
+set inccommand=nosplit
 nnoremap <space> za
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>
 set foldmethod=indent   " fold based on indent level
 set lazyredraw
 set tabstop=4       " number of visual spaces per TAB
@@ -88,6 +90,7 @@ endif
 
 cd ~/workspace
 
+hi Normal guibg=NONE ctermbg=NONE
 
 function! Multiple_cursors_before()
     let b:deoplete_disable_auto_complete = 1
@@ -96,12 +99,6 @@ endfunction
 function! Multiple_cursors_after()
     let b:deoplete_disable_auto_complete = 0
 endfunction
-
-" Plugin key-mappings.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 tnoremap <Esc> <C-\><C-n>
 
