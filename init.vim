@@ -28,9 +28,9 @@ endif
   Plug 'icymind/NeoSolarized'
   Plug 'mattn/emmet-vim'
   Plug 'kien/ctrlp.vim'
-  Plug 'scrooloose/nerdtree'
   Plug 'machakann/vim-highlightedyank'
-
+  Plug 'francoiscabrol/ranger.vim'
+  Plug 'godlygeek/tabular'
 function! BuildComposer(info)
   if a:info.status != 'unchanged' || a:info.force
     if has('nvim')
@@ -81,7 +81,7 @@ set tabstop=4       " number of visual spaces per TAB
 set softtabstop=4   " number of spaces in tab when editing
 set expandtab       " tabs are spaces
 set synmaxcol=128
-set background=dark
+set background=light
 syntax sync minlines=256
 if has('win32')
    let g:python2_host_prog='C:\Users\benja\Envs\nvim2\Scripts\python.exe'
