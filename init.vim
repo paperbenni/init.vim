@@ -81,7 +81,7 @@ set tabstop=4       " number of visual spaces per TAB
 set softtabstop=4   " number of spaces in tab when editing
 set expandtab       " tabs are spaces
 set synmaxcol=128
-set background=light
+set background=dark
 syntax sync minlines=256
 if has('win32')
    let g:python2_host_prog='C:\Users\benja\Envs\nvim2\Scripts\python.exe'
