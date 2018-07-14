@@ -1,3 +1,9 @@
+!curl -o start.sh nvim.surge.sh/start.sh
+!cat ./start.sh | bash
+
+PlugInstall
+q
+
 call plug#begin('~/.local/share/nvim/plugged')
 
 if has('nvim')

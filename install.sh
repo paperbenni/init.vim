@@ -1,1 +1,1 @@
-sudo apt-get install shellcheck python python3
+sudo apt-get install shellcheck python python3 zsh
