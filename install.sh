@@ -9,6 +9,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 if [ -e ~/.config/nvim ]
+then
     echo "nvim config folder found"
 else
     mkdir -p ~/.config/nvim
