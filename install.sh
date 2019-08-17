@@ -1,45 +1,32 @@
-#!/bin/bash
-
-pushd ~/
-
-if [ -e .nvimpackages ]
+if ! [ -e ~/.local/share/nvim/site/autoload/plug.vim ]
 then
-    echo "all packages already installed"
-else
-    if [ ! -e .fonts ]
-    then
-        mkdir fonts
-    fi
-    pushd .fonts
-    curl -o SourceCodePowerline.otf https://github.com/powerline/fonts/blob/master/SourceCodePro/Source%20Code%20Pro%20for%20Powerline.otf
-    popd
-    fc-cache -f -v
-    sudo apt update
-    sudo apt-get install -y neovim shellcheck python python3 zsh nodejs python3-pip python-pip npm ruby-full clang
-    pip install neovim
-    pip3 install neovim
-    sudo npm install -g neovim
-    sudo gem install neovim
-    echo "true" > .nvimpackages
+	echo "Installing vim-plug"
+	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
+cd
+rm -rf .config/nvim
+mkdir .config/nvim
+
+curl https://raw.githubusercontent.com/paperbenni/nvim/master/init.vim > .config/nvim/init.vim
+
+if ! python3 -c "import neovim"
+then
 fi
 
-# install vim-plug
-echo "installing vim-plug"
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-if [ -e ~/.config/nvim ]
+if ! python2 -c "import neovim"
 then
-    echo "nvim config folder found"
-else
-    mkdir -p ~/.config/nvim
-    echo "created config folder"
+	sudo pip2 install neovim pynvim
 fi
 
-pushd ~/.config/nvim
+if ! npm list -g | grep 'neovim'
+then
+	sudo npm install -g nvim
+fi
 
-curl https://raw.githubusercontent.com/paperbenni/nvim/master/init.vim > init.vim
-curl https://raw.githubusercontent.com/paperbenni/nvim/master/ginit.vim > ginit.vim
+if ! gem list | grep 'neovim'
+then
+	sudo gem install neovim
+fi
 
-popd
-popd
+nvim -c "PlugInstall"
