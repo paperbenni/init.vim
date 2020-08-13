@@ -35,9 +35,13 @@ colorscheme onedark
 map <SPACE> <leader>
 set hidden
 
+set inccommand=split
+
 command! -bang ProjectFiles call fzf#vim#files('~/workspace', <bang>0)
 
 nnoremap <leader><SPACE> :Files<CR>
 
 nnoremap <leader>w :ProjectFiles<CR>
+nnoremap <leader>b :Buffers<CR>
 
+set foldmethod=indent
