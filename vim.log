@@ -1,0 +1,83 @@
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.011  000.011: --- NVIM STARTING ---
+000.605  000.593: locale set
+001.072  000.467: inits 1
+001.117  000.045: window checked
+001.201  000.084: parsing arguments
+001.328  000.127: expanding arguments
+001.417  000.089: inits 2
+002.165  000.748: init highlight
+004.755  002.590: waiting for UI
+006.632  001.877: done waiting for UI
+006.695  000.063: initialized screen early for UI
+006.912  000.047  000.047: sourcing /usr/share/nvim/archlinux.vim
+006.932  000.140  000.093: sourcing /etc/xdg//nvim/sysinit.vim
+008.982  001.924  001.924: sourcing /home/benjamin/.local/share/nvim/site/autoload/plug.vim
+018.002  000.024  000.024: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+018.068  000.024  000.024: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+018.115  000.025  000.025: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+018.178  000.039  000.039: sourcing /usr/share/vim/vimfiles/ftdetect/meson.vim
+018.258  007.743  007.631: sourcing /usr/share/nvim/runtime/filetype.vim
+018.397  000.044  000.044: sourcing /usr/share/nvim/runtime/ftplugin.vim
+018.533  000.042  000.042: sourcing /usr/share/nvim/runtime/indent.vim
+019.181  000.395  000.395: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+019.311  000.615  000.219: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+019.353  000.745  000.131: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+019.693  000.237  000.237: sourcing /usr/share/nvim/runtime/syntax/nosyntax.vim
+020.036  000.192  000.192: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+020.156  000.399  000.207: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+020.195  000.783  000.146: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+021.038  000.211  000.211: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+021.711  000.177  000.177: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+021.959  000.106  000.106: sourcing /home/benjamin/.vim/plugged/onedark.vim/autoload/onedark.vim
+052.014  031.762  031.268: sourcing /home/benjamin/.vim/plugged/onedark.vim/colors/onedark.vim
+052.062  045.087  002.043: sourcing /home/benjamin/.config/nvim/init.vim
+052.075  000.154: sourcing vimrc file(s)
+052.914  000.113  000.113: sourcing /home/benjamin/.vim/plugged/coc.nvim/autoload/coc/rpc.vim
+053.894  000.907  000.907: sourcing /home/benjamin/.vim/plugged/coc.nvim/autoload/coc/util.vim
+054.399  000.218  000.218: sourcing /home/benjamin/.vim/plugged/coc.nvim/autoload/coc/client.vim
+060.581  007.985  006.747: sourcing /home/benjamin/.vim/plugged/coc.nvim/plugin/coc.vim
+061.525  000.196  000.196: sourcing /home/benjamin/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+062.124  000.153  000.153: sourcing /home/benjamin/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+063.845  003.035  002.687: sourcing /home/benjamin/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+064.614  000.261  000.261: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+064.674  000.018  000.018: sourcing /usr/share/nvim/runtime/plugin/health.vim
+064.812  000.096  000.096: sourcing /usr/share/nvim/runtime/plugin/man.vim
+065.506  000.297  000.297: sourcing /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+065.573  000.723  000.426: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+065.801  000.206  000.206: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+066.430  000.584  000.584: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+066.701  000.220  000.220: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+066.917  000.148  000.148: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+066.997  000.040  000.040: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+067.234  000.195  000.195: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+067.378  000.102  000.102: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+067.444  000.027  000.027: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+067.689  000.208  000.208: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+068.449  000.628  000.628: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+068.517  001.965: loading plugins
+068.656  000.139: loading packages
+068.763  000.108: loading after plugins
+068.788  000.024: inits 3
+071.245  002.458: reading ShaDa
+074.838  000.324  000.324: sourcing /usr/share/nvim/runtime/ftplugin/vim.vim
+075.559  000.099  000.099: sourcing /usr/share/nvim/runtime/indent/vim.vim
+081.726  005.891  005.891: sourcing /usr/share/nvim/runtime/syntax/vim.vim
+085.098  003.228  003.228: sourcing /usr/share/nvim/runtime/syntax/vim/generated.vim
+085.596  004.808: opening buffers
+085.866  000.171  000.171: sourcing /home/benjamin/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+086.879  000.088  000.088: sourcing /home/benjamin/.vim/plugged/vim-gitgutter/autoload/gitgutter/async.vim
+087.050  000.086  000.086: sourcing /home/benjamin/.vim/plugged/vim-gitgutter/autoload/gitgutter/debug.vim
+102.701  007.560  007.560: sourcing /home/benjamin/.vim/plugged/vim-gitgutter/autoload/gitgutter/diff.vim
+105.057  011.555: BufEnter autocommands
+105.075  000.018: editing files in windows
+105.345  000.270: VimEnter autocommands
+105.354  000.010: UIEnter autocommands
+105.359  000.005: before starting main loop
+130.341  024.982: first screen update
+130.358  000.017: --- NVIM STARTED ---

@@ -4,8 +4,10 @@ set number
 set mouse=a
 
 call plug#begin('~/.vim/plugged')
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'joshdick/onedark.vim'
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'joshdick/onedark.vim'
+	Plug 'airblade/vim-gitgutter'
+	Plug 'tpope/vim-fugitive'
 call plug#end()
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
@@ -25,5 +27,7 @@ if (empty($TMUX))
 endif
 
 syntax on
+
+tnoremap <Esc> <C-\><C-n>
 
 colorscheme onedark
