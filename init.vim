@@ -45,3 +45,4 @@ nnoremap <leader>w :ProjectFiles<CR>
 nnoremap <leader>b :Buffers<CR>
 
 set foldmethod=indent
+set nofoldenable
