@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-echo "installing paperbenni's neovim"
+
+echo "installing paperbenni's neovim config"
 echo "warning, this will override existing configs"
 
 if ! [ -e ~/.local/share/nvim/site/autoload/plug.vim ]
@@ -30,7 +31,7 @@ fi
 
 if ! npm list -g | grep 'neovim'
 then
-	sudo npm install -g nvim
+	sudo npm install -g neovim
 fi
 
 if ! gem list | grep 'neovim'
