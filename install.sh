@@ -39,4 +39,5 @@ then
 fi
 
 echo "installing all plugins"
-nvim -c "PlugInstall"
+nvim -c "PlugInstall | qa"
+nvim -c "CocInstall coc-tabnine | qa"
