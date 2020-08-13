@@ -8,7 +8,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'joshdick/onedark.vim'
 	Plug 'airblade/vim-gitgutter'
 	Plug 'tpope/vim-fugitive'
-
+	Plug 'junegunn/fzf.vim'
 call plug#end()
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
@@ -34,4 +34,10 @@ tnoremap <Esc> <C-\><C-n>
 colorscheme onedark
 map <SPACE> <leader>
 set hidden
+
+command! -bang ProjectFiles call fzf#vim#files('~/workspace', <bang>0)
+
 nnoremap <leader><SPACE> :Files<CR>
+
+nnoremap <leader>w :ProjectFiles<CR>
+
