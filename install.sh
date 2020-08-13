@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 echo "installing paperbenni's neovim"
+echo "warning, this will override existing configs"
 
 if ! [ -e ~/.local/share/nvim/site/autoload/plug.vim ]
 then
@@ -13,8 +14,10 @@ cd
 rm -rf .config/nvim
 mkdir .config/nvim
 
-curl https://raw.githubusercontent.com/paperbenni/nvim/master/init.vim > .config/nvim/init.vim
+echo "installing init.vim"
+curl -s https://raw.githubusercontent.com/paperbenni/nvim/master/init.vim > .config/nvim/init.vim
 
+echo "installing neovim providers"
 if ! python3 -c "import neovim"
 then
 	sudo pip3 install neovim pynvim
@@ -35,4 +38,5 @@ then
 	sudo gem install neovim
 fi
 
+echo "installing all plugins"
 nvim -c "PlugInstall"
