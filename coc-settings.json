@@ -1,0 +1,6 @@
+{
+  "diagnostic-languageserver.formatFiletypes": {
+    "sh": "shfmt"
+  },
+  "coc.preferences.formatOnSaveFiletypes": ["markdown", "javascript", "bash", "sh"]
+}
