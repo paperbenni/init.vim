@@ -10,6 +10,10 @@ checkcommand() {
 	fi
 }
 
+installcoc() {
+	nvim -c "CocInstall coc-$1 | qa"
+}
+
 checkcommand npm
 checkcommand node
 checkcommand pip
@@ -24,8 +28,11 @@ cd
 rm -rf .config/nvim
 mkdir .config/nvim
 
-echo "installing init.vim"
-curl -s https://raw.githubusercontent.com/paperbenni/nvim/master/init.vim >.config/nvim/init.vim
+echo "installing config files"
+RAWHUB="https://raw.githubusercontent.com/paperbenni/nvim/master"
+
+curl -s $RAWHUB/init.vim >.config/nvim/init.vim
+curl -s $RAWHUB/coc-settings.json >.config/nvim/coc-settings.json
 
 echo "installing neovim providers"
 if ! python3 -c "import neovim"; then
@@ -47,5 +54,14 @@ fi
 echo "installing all plugins"
 
 nvim -c "PlugInstall | qa"
-nvim -c "CocInstall coc-tabnine | qa"
+
+installcoc tabnine
+installcoc marketplace
+installcoc sh
+installcoc vimlsp
+installcoc diagnostic
+installcoc clangd
+installcoc python
+installcoc json
+
 echo "finished installing paperbenni's neovim config"
