@@ -64,6 +64,8 @@ installcoc clangd
 installcoc python
 installcoc json
 installcoc explorer
+installcoc markdownlint
+installcoc html
 
 nvim -c "CocInstall $COCLIST"
 
