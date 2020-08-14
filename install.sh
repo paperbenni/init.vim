@@ -11,7 +11,7 @@ checkcommand() {
 }
 
 installcoc() {
-	nvim -c "CocInstall coc-$1 | qa"
+	COCLIST="$COCLIST coc-$1"
 }
 
 checkcommand npm
@@ -63,5 +63,7 @@ installcoc diagnostic
 installcoc clangd
 installcoc python
 installcoc json
+
+nvim -c "CocInstall $COCLIST"
 
 echo "finished installing paperbenni's neovim config"
