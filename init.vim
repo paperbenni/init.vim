@@ -39,6 +39,19 @@ nnoremap <leader>e :CocCommand explorer<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>p :terminal git push<CR>i
 nnoremap <leader>n :tabnew<CR>
+nnoremap <leader>c :call CocAction('pickColor')<CR>
+
+nnoremap <leader>k :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 set foldmethod=indent
 set nofoldenable
