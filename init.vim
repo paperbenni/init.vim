@@ -37,6 +37,8 @@ nnoremap <leader>g :Gcd<CR>
 nnoremap <leader>s :G<CR>
 nnoremap <leader>e :CocCommand explorer<CR>
 nnoremap <leader>q :q<CR>
+nnoremap <leader>p :terminal git push<CR>
+nnoremap <leader>n :tabnew<CR>
 
 set foldmethod=indent
 set nofoldenable
