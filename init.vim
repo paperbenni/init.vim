@@ -33,6 +33,9 @@ nnoremap <leader><SPACE> :Files<CR>
 
 nnoremap <leader>w :ProjectFiles<CR>
 nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>g :Gcd<CR>
+nnoremap <leader>s :G<CR>
+nnoremap <leader>e :CocCommand explorer<CR>
 
 set foldmethod=indent
 set nofoldenable
