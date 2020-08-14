@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'airblade/vim-gitgutter'
 	Plug 'tpope/vim-fugitive'
 	Plug 'junegunn/fzf.vim'
+    Plug 'honza/vim-snippets'
 call plug#end()
 
 " somehow works in tmux now...
@@ -68,12 +69,17 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
-
-" Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 set tabstop=4

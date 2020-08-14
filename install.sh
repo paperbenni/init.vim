@@ -67,6 +67,7 @@ installcoc explorer
 installcoc markdownlint
 installcoc html
 installcoc highlight
+installcoc snippets
 
 nvim -c "CocInstall $COCLIST"
 
