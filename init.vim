@@ -46,3 +46,11 @@ nnoremap <leader>b :Buffers<CR>
 
 set foldmethod=indent
 set nofoldenable
+
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+set tabstop=4
+set expandtab
+
