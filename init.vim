@@ -9,6 +9,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'joshdick/onedark.vim'
 	Plug 'airblade/vim-gitgutter'
 	Plug 'tpope/vim-fugitive'
+	Plug 'tpope/vim-surround'
 	Plug 'junegunn/fzf.vim'
     Plug 'honza/vim-snippets'
 call plug#end()
@@ -41,7 +42,7 @@ nnoremap <leader>q :q<CR>
 nnoremap <leader>p :terminal git push<CR>i
 nnoremap <leader>n :tabnew<CR>
 nnoremap <leader>c :call CocAction('pickColor')<CR>
-
+nnoremap <leader>h :GitGutterPreviewHunk<CR>
 nnoremap <leader>k :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
