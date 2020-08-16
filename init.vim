@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-surround'
 	Plug 'junegunn/fzf.vim'
     Plug 'honza/vim-snippets'
+    Plug 'nathanaelkane/vim-indent-guides'
 call plug#end()
 
 " somehow works in tmux now...
@@ -35,6 +36,7 @@ nnoremap <leader><SPACE> :Files<CR>
 
 nnoremap <leader>w :ProjectFiles<CR>
 nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>r :Tags<CR>
 nnoremap <leader>g :Gcd<CR>
 nnoremap <leader>s :G<CR>
 nnoremap <leader>e :CocCommand explorer<CR>
@@ -90,6 +92,10 @@ function! s:check_back_space() abort
 endfunction
 
 
-set tabstop=4
-set expandtab
+set tabstop=4 shiftwidth=4 expandtab
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+
+set relativenumber
+set tabline
 
