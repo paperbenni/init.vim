@@ -12,8 +12,10 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-surround'
 	Plug 'junegunn/fzf.vim'
     Plug 'honza/vim-snippets'
-    Plug 'nathanaelkane/vim-indent-guides'
+    Plug 'andymass/vim-matchup'
 call plug#end()
+
+set list lcs=tab:\|\ 
 
 " somehow works in tmux now...
 if has("termguicolors")
@@ -22,6 +24,7 @@ endif
 
 syntax on
 
+" Escape key in terminal
 tnoremap <Esc> <C-\><C-n>
 
 colorscheme onedark
@@ -64,7 +67,6 @@ set nofoldenable
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
-
 " Use <c-space> to trigger completion.
 if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()
@@ -93,9 +95,8 @@ endfunction
 
 
 set tabstop=4 shiftwidth=4 expandtab
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
 
 set tabline
+set cursorline
 set relativenumber
 
