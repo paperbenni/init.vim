@@ -4,15 +4,18 @@ set number
 set mouse=a
 
 call plug#begin('~/.vim/plugged')
-	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	Plug 'joshdick/onedark.vim'
-	Plug 'airblade/vim-gitgutter'
-	Plug 'tpope/vim-fugitive'
-	Plug 'tpope/vim-surround'
-	Plug 'junegunn/fzf.vim'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'tpope/vim-eunuch'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'joshdick/onedark.vim'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-surround'
+    Plug 'junegunn/fzf.vim'
     Plug 'honza/vim-snippets'
     Plug 'andymass/vim-matchup'
+    Plug 'tpope/vim-repeat'
+    Plug 'tpope/vim-commentary'
 call plug#end()
 
 set list lcs=tab:\|\ 
@@ -48,6 +51,7 @@ nnoremap <leader>p :terminal git push<CR>i
 nnoremap <leader>n :tabnew<CR>
 nnoremap <leader>c :call CocAction('pickColor')<CR>
 nnoremap <leader>h :GitGutterPreviewHunk<CR>
+nnoremap <leader>m :Marks<CR>
 nnoremap <leader>k :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
@@ -96,7 +100,13 @@ endfunction
 
 set tabstop=4 shiftwidth=4 expandtab
 
+" additional mode switching
+
+noremap <special> kj <ESC> | inoremap <special> jk <ESC>:
+
 set tabline
 set cursorline
 set relativenumber
+set smartcase
+set ignorecase
 
