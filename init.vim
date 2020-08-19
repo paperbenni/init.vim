@@ -102,7 +102,8 @@ set tabstop=4 shiftwidth=4 expandtab
 
 " additional mode switching
 
-noremap <special> kj <ESC> | inoremap <special> jk <ESC>:
+inoremap <special> kj <ESC> 
+inoremap <special> jk <ESC>:
 
 set tabline
 set cursorline
