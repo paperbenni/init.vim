@@ -16,6 +16,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'andymass/vim-matchup'
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-commentary'
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'psliwka/vim-smoothie'
 call plug#end()
 
 set list lcs=tab:\|\ 
