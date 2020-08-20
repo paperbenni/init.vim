@@ -13,7 +13,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-surround'
     Plug 'junegunn/fzf.vim'
     Plug 'honza/vim-snippets'
-    Plug 'andymass/vim-matchup'
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-commentary'
     Plug 'jiangmiao/auto-pairs'
@@ -41,8 +40,9 @@ set inccommand=split
 command! -bang ProjectFiles call fzf#vim#files('~/workspace', <bang>0)
 
 nnoremap <leader><SPACE> :Files<CR>
-
-nnoremap <leader>w :ProjectFiles<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>o :ProjectFiles<CR>
+nnoremap <leader>f :CocSearch
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>r :Tags<CR>
 nnoremap <leader>g :Gcd<CR>
