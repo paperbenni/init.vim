@@ -70,8 +70,8 @@ set foldmethod=indent
 set nofoldenable
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>i  <Plug>(coc-format-selected)
+nmap <leader>i  <Plug>(coc-format-selected)
 
 " Use <c-space> to trigger completion.
 if has('nvim')
