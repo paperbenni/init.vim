@@ -49,7 +49,7 @@ nnoremap <leader>g :Gcd<CR>
 nnoremap <leader>s :G<CR>
 nnoremap <leader>e :CocCommand explorer<CR>
 nnoremap <leader>q :q<CR>
-nnoremap <leader>p :terminal git push<CR>i
+nnoremap <leader>p :vsplit<CR> \| :terminal git push<CR>i
 nnoremap <leader>n :tabnew<CR>
 nnoremap <leader>c :call CocAction('pickColor')<CR>
 nnoremap <leader>h :GitGutterPreviewHunk<CR>
@@ -69,9 +69,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 set foldmethod=indent
 set nofoldenable
 
-" Formatting selected code.
-xmap <leader>i  <Plug>(coc-format-selected)
-nmap <leader>i  <Plug>(coc-format-selected)
+nmap <leader>i  <Plug>(coc-format)
 
 " Use <c-space> to trigger completion.
 if has('nvim')
