@@ -28,8 +28,6 @@ endif
 
 syntax on
 
-" Escape key in terminal
-tnoremap <Esc> <C-\><C-n>
 
 colorscheme onedark
 map <SPACE> <leader>
@@ -42,7 +40,7 @@ command! -bang ProjectFiles call fzf#vim#files('~/workspace', <bang>0)
 nnoremap <leader><SPACE> :Files<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>o :ProjectFiles<CR>
-nnoremap <leader>f :CocSearch
+nnoremap <leader>f :CocSearch 
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>r :Tags<CR>
 nnoremap <leader>g :Gcd<CR>
@@ -55,6 +53,8 @@ nnoremap <leader>c :call CocAction('pickColor')<CR>
 nnoremap <leader>h :GitGutterPreviewHunk<CR>
 nnoremap <leader>m :Marks<CR>
 nnoremap <leader>k :call <SID>show_documentation()<CR>
+
+nmap <leader><tab> <plug>(fzf-maps-n)
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -104,6 +104,7 @@ set tabstop=4 shiftwidth=4 expandtab
 
 inoremap <special> kj <ESC> 
 inoremap <special> jk <ESC>:
+tnoremap <special> jk <C-\><C-n>
 
 set tabline
 set cursorline
