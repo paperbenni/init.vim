@@ -40,7 +40,7 @@ command! -bang ProjectFiles call fzf#vim#files('~/workspace', <bang>0)
 nnoremap <leader><SPACE> :Files<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>o :ProjectFiles<CR>
-nnoremap <leader>f :CocSearch 
+nnoremap <leader>f :CocSearch -S 
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>r :Tags<CR>
 nnoremap <leader>g :Gcd<CR>
