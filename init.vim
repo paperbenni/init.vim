@@ -55,6 +55,9 @@ nnoremap <leader>h :GitGutterPreviewHunk<CR>
 nnoremap <leader>m :Marks<CR>
 nnoremap <leader>k :call <SID>show_documentation()<CR>
 
+nnoremap <leader>. :bn<CR>
+nnoremap <leader>, :bp<CR>
+
 nmap <leader><tab> <plug>(fzf-maps-n)
 
 
