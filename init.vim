@@ -133,3 +133,5 @@ set relativenumber
 set smartcase
 set ignorecase
 
+set guifont=FiraCode\ Nerd\ Font\ Mono:h13
+
