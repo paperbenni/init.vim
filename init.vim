@@ -46,6 +46,7 @@ nnoremap <leader><SPACE> :Files<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>o :ProjectFiles<CR>
 nnoremap <leader>f :CocSearch -S 
+nnoremap <leader>l :Lines<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>r :Tags<CR>
 nnoremap <leader>g :Gcd<CR>
