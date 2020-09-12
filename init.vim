@@ -133,6 +133,7 @@ set cursorline
 set relativenumber
 set smartcase
 set ignorecase
+set scrolloff=6
 
 set guifont=FiraCode\ Nerd\ Font\ Mono:h13
 
