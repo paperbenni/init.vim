@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-surround'
     Plug 'junegunn/fzf.vim'
+    Plug 'sbdchd/neoformat'
     Plug 'honza/vim-snippets'
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-commentary'
