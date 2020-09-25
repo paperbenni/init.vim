@@ -26,7 +26,7 @@ fi
 
 cd || exit 1
 rm -rf .config/nvim
-mkdir .config/nvim
+mkdir -p .config/nvim
 
 echo "installing config files"
 RAWHUB="https://raw.githubusercontent.com/paperbenni/nvim/master"
