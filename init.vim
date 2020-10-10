@@ -12,7 +12,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'rhysd/vim-grammarous'
     Plug 'tpope/vim-fugitive'
     Plug 'machakann/vim-highlightedyank'
-    Plug 'vim-highlightedyank'
     Plug 'tpope/vim-surround'
     Plug 'junegunn/fzf.vim'
     Plug 'sbdchd/neoformat'
