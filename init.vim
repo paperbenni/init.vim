@@ -11,7 +11,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'airblade/vim-gitgutter'
     Plug 'rhysd/vim-grammarous'
     Plug 'tpope/vim-fugitive'
-    Plug 'vim-highlightedyank'
+    Plug 'machakann/vim-highlightedyank'
     Plug 'tpope/vim-surround'
     Plug 'junegunn/fzf.vim'
     Plug 'sbdchd/neoformat'
