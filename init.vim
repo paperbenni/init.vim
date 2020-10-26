@@ -9,6 +9,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'mhinz/vim-startify'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'joshdick/onedark.vim'
+    Plug 'preservim/tagbar'
     Plug 'airblade/vim-gitgutter'
     Plug 'rhysd/vim-grammarous'
     Plug 'tpope/vim-fugitive'
