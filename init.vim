@@ -64,6 +64,7 @@ nnoremap <leader>c :call CocAction('pickColor')<CR>
 nnoremap <leader>h :GitGutterPreviewHunk<CR>
 nnoremap <leader>m :Marks<CR>
 nnoremap <leader>k :call <SID>show_documentation()<CR>
+nnoremap <leader>a :Startify<CR>
 
 nnoremap <leader>. :bn<CR>
 nnoremap <leader>, :bp<CR>
