@@ -68,6 +68,7 @@ installcoc markdownlint
 installcoc html
 installcoc highlight
 installcoc snippets
+installcoc java
 
 nvim -c "CocInstall $COCLIST"
 
