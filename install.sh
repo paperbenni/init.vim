@@ -63,6 +63,7 @@ installcoc diagnostic
 installcoc clangd
 installcoc python
 installcoc json
+installcoc java
 installcoc explorer
 installcoc markdownlint
 installcoc html
