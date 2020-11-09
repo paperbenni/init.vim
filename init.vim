@@ -16,6 +16,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'machakann/vim-highlightedyank'
     Plug 'tpope/vim-surround'
     Plug 'junegunn/fzf.vim'
+    Plug 'junegunn/goyo.vim'
     Plug 'sbdchd/neoformat'
     Plug 'honza/vim-snippets'
     Plug 'tpope/vim-repeat'
@@ -68,6 +69,7 @@ nnoremap <leader>m :Marks<CR>
 nnoremap <leader>k :call <SID>show_documentation()<CR>
 nnoremap <leader>a :Startify<CR>
 nnoremap <leader>d :cd %:p:h<CR>
+nnoremap <leader>z :Goyo<CR>
 
 nnoremap <leader>. :bn<CR>
 nnoremap <leader>, :bp<CR>
