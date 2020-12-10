@@ -1,4 +1,5 @@
 " paperbenni's vimrc
+" requires nvim-git
 
 set number
 set mouse=a
@@ -6,6 +7,7 @@ set mouse=a
 call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'tpope/vim-eunuch'
+    Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'mhinz/vim-startify'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'joshdick/onedark.vim'
@@ -76,6 +78,7 @@ nnoremap <leader>, :bp<CR>
 
 nmap <leader><tab> <plug>(fzf-maps-n)
 
+lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
 
 nmap <leader>1 <Plug>BufTabLine.Go(1)
 nmap <leader>2 <Plug>BufTabLine.Go(2)
