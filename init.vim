@@ -65,6 +65,7 @@ nnoremap <leader>e :CocCommand explorer<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>p :vsplit<CR> \| :terminal git push<CR>i
 nnoremap <leader>n :tabnew<CR>
+nnoremap <leader>N :Neoformat<CR>
 nnoremap <leader>c :call CocAction('pickColor')<CR>
 nnoremap <leader>h :GitGutterPreviewHunk<CR>
 nnoremap <leader>m :Marks<CR>
