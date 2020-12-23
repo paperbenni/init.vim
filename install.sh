@@ -54,6 +54,7 @@ fi
 echo "installing all plugins"
 
 nvim -c "PlugInstall | qa"
+nvim -c "TSInstall all | qa"
 
 installcoc tabnine
 installcoc marketplace
@@ -67,6 +68,7 @@ installcoc java
 installcoc explorer
 installcoc markdownlint
 installcoc html
+installcoc flutter
 installcoc highlight
 installcoc snippets
 installcoc java

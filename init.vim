@@ -7,6 +7,9 @@ set mouse=a
 call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'tpope/vim-eunuch'
+    Plug 'xolox/vim-notes'
+    Plug 'xolox/vim-misc'
+    Plug 'szw/vim-maximizer'
     Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'mhinz/vim-startify'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
