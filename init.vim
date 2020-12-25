@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'xolox/vim-notes'
     Plug 'xolox/vim-misc'
     Plug 'szw/vim-maximizer'
+    Plug 'kassio/neoterm'
     Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'mhinz/vim-startify'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
