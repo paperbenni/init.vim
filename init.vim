@@ -5,34 +5,42 @@ set number
 set mouse=a
 
 call plug#begin('~/.vim/plugged')
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'tpope/vim-eunuch'
-    Plug 'xolox/vim-notes'
-    Plug 'xolox/vim-misc'
-    Plug 'szw/vim-maximizer'
-    Plug 'kassio/neoterm'
-    Plug 'nvim-treesitter/nvim-treesitter'
-    Plug 'mhinz/vim-startify'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'joshdick/onedark.vim'
-    Plug 'preservim/tagbar'
-    Plug 'airblade/vim-gitgutter'
-    Plug 'rhysd/vim-grammarous'
+    " essential stuff
     Plug 'tpope/vim-fugitive'
-    Plug 'machakann/vim-highlightedyank'
-    Plug 'tpope/vim-surround'
     Plug 'junegunn/fzf.vim'
-    Plug 'junegunn/goyo.vim'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'tpope/vim-eunuch'
+    Plug 'xolox/vim-misc'
+    Plug 'joshdick/onedark.vim'
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-treesitter/nvim-treesitter'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'tpope/vim-surround'
     Plug 'sbdchd/neoformat'
-    Plug 'honza/vim-snippets'
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-commentary'
+    Plug 'honza/vim-snippets'
+    " experimental stuff
+    Plug 'szw/vim-maximizer'
+    Plug 'dbeniamine/cheat.sh-vim'
+    Plug 'kassio/neoterm'
+    Plug 'rhysd/vim-grammarous'
+    Plug 'preservim/tagbar'
+    Plug 'mhinz/vim-startify'
+    Plug 'xolox/vim-notes'
+    Plug 'machakann/vim-highlightedyank'
+    Plug 'junegunn/goyo.vim'
     Plug 'jiangmiao/auto-pairs'
     Plug 'psliwka/vim-smoothie'
-    Plug 'ap/vim-buftabline'
+    Plug 'vim-airline/vim-airline'
     Plug 'lervag/vimtex'
 call plug#end()
 
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
 set list lcs=tab:\|\ 
 
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
@@ -57,25 +65,26 @@ set inccommand=split
 command! -bang ProjectFiles call fzf#vim#files('~/workspace', <bang>0)
 
 nnoremap <leader><SPACE> :Files<CR>
+nnoremap <leader>a :Startify<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>c :call CocAction('pickColor')<CR>
+nnoremap <leader>d :cd %:p:h<CR>
+nnoremap <leader>e :CocCommand explorer<CR>
+nnoremap <leader>f :CocSearch -S 
+nnoremap <leader>g :Gcd<CR>
+nnoremap <leader>h :GitGutterPreviewHunk<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>o :ProjectFiles<CR>
-nnoremap <leader>f :CocSearch -S 
-nnoremap <leader>l :Lines<CR>
-nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>l :Telescope live_grep<CR>
+nnoremap <leader>L :Lines<CR>
 nnoremap <leader>r :Tags<CR>
-nnoremap <leader>g :Gcd<CR>
 nnoremap <leader>s :G<CR>
-nnoremap <leader>e :CocCommand explorer<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>p :vsplit<CR> \| :terminal git push<CR>i
 nnoremap <leader>n :tabnew<CR>
 nnoremap <leader>N :Neoformat<CR>
-nnoremap <leader>c :call CocAction('pickColor')<CR>
-nnoremap <leader>h :GitGutterPreviewHunk<CR>
 nnoremap <leader>m :Marks<CR>
 nnoremap <leader>k :call <SID>show_documentation()<CR>
-nnoremap <leader>a :Startify<CR>
-nnoremap <leader>d :cd %:p:h<CR>
 nnoremap <leader>z :Goyo<CR>
 
 nnoremap <leader>. :bn<CR>
