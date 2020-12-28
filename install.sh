@@ -54,9 +54,14 @@ fi
 echo "installing all plugins"
 
 nvim -c "PlugInstall | qa"
-nvim -c "TSInstall all | qa"
 
-installcoc tabnine
+if grep -i memtotal /proc/meminfo | grep -o '[0-9]*' | grep -Eq '[0-9]{7,}'; then
+    nvim -c "TSInstall all | qa"
+    installcoc tabnine
+else
+    echo "skipping heavy stuff"
+fi
+
 installcoc marketplace
 installcoc sh
 installcoc vimlsp
