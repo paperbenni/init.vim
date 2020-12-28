@@ -15,25 +15,25 @@ call plug#begin('~/.vim/plugged')
     Plug 'joshdick/onedark.vim'
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-telescope/telescope.nvim', { 'on': 'Telescope' }
     Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-surround'
-    Plug 'sbdchd/neoformat'
+    Plug 'sbdchd/neoformat', { 'on': 'Neoformat' }
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-commentary'
     Plug 'honza/vim-snippets'
     " experimental stuff
     Plug 'ryanoasis/vim-devicons'
-    Plug 'szw/vim-maximizer'
-    Plug 'dbeniamine/cheat.sh-vim'
-    Plug 'kassio/neoterm'
+    Plug 'szw/vim-maximizer', { 'on': 'MaximizerToggle' }
+    Plug 'dbeniamine/cheat.sh-vim', { 'on': 'Cheat' }
+    Plug 'kassio/neoterm', { 'on': 'Ttoggle' }
     Plug 'rhysd/vim-grammarous'
-    Plug 'preservim/tagbar'
+    Plug 'preservim/tagbar', { 'on': 'Tagbar' }
     Plug 'mhinz/vim-startify'
     Plug 'xolox/vim-notes'
     Plug 'machakann/vim-highlightedyank'
-    Plug 'junegunn/goyo.vim'
+    Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
     Plug 'jiangmiao/auto-pairs'
     Plug 'psliwka/vim-smoothie'
     Plug 'vim-airline/vim-airline'
