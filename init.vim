@@ -24,6 +24,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-commentary'
     Plug 'honza/vim-snippets'
     " experimental stuff
+    Plug 'ryanoasis/vim-devicons'
     Plug 'szw/vim-maximizer'
     Plug 'dbeniamine/cheat.sh-vim'
     Plug 'kassio/neoterm'
@@ -41,6 +42,10 @@ call plug#end()
 
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:netrw_liststyle=3
+let g:netrw_banner = 0
+
 set list lcs=tab:\|\ 
 
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
@@ -165,4 +170,5 @@ set ignorecase
 set scrolloff=6
 
 set guifont=FiraCode\ Nerd\ Font\ Mono:h13
+set encoding=UTF-8
 
