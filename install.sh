@@ -55,7 +55,7 @@ echo "installing all plugins"
 
 nvim -c "PlugInstall | qa"
 
-if grep -i memtotal /proc/meminfo | grep -o '[0-9]*' | grep -Eq '[0-9]{7,}'; then
+if grep -i memtotal /proc/meminfo | grep -o '[0-9]*' | grep -Eq '[0-9]{7,}' && ! command -v termux-setup-storage; then
     nvim -c "TSInstall all | qa"
     installcoc tabnine
 else

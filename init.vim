@@ -97,7 +97,9 @@ nnoremap <leader>, :bp<CR>
 
 nmap <leader><tab> <plug>(fzf-maps-n)
 
-lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
+if has('lua')
+    lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
+endif
 
 nmap <leader>1 <Plug>BufTabLine.Go(1)
 nmap <leader>2 <Plug>BufTabLine.Go(2)
