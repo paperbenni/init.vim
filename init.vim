@@ -13,16 +13,19 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-eunuch'
     Plug 'xolox/vim-misc'
     Plug 'joshdick/onedark.vim'
-    Plug 'nvim-lua/popup.nvim'
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim'
-    Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-surround'
     Plug 'sbdchd/neoformat'
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-commentary'
     Plug 'honza/vim-snippets'
+    " lua stuff
+    if has('lua')
+	    Plug 'nvim-lua/popup.nvim'
+	    Plug 'nvim-lua/plenary.nvim'
+	    Plug 'nvim-telescope/telescope.nvim'
+	    Plug 'nvim-treesitter/nvim-treesitter'
+    endif
     " experimental stuff
     Plug 'ryanoasis/vim-devicons'
     Plug 'szw/vim-maximizer'
@@ -97,7 +100,9 @@ nnoremap <leader>, :bp<CR>
 
 nmap <leader><tab> <plug>(fzf-maps-n)
 
-lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
+if has('lua')
+    lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
+endif
 
 nmap <leader>1 <Plug>BufTabLine.Go(1)
 nmap <leader>2 <Plug>BufTabLine.Go(2)
