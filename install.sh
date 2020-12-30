@@ -10,9 +10,9 @@ install_plugins() {
     $NVIMCMD -c "PlugInstall | qa"
 
     if 
-        grep -i memtotal /proc/meminfo | 
-            grep -o '[0-9]*' | 
-            grep -Eq '[0-9]{7,}' && 
+        grep -i memtotal /proc/meminfo |
+            grep -o '[0-9]*' |
+            grep -Eq '[0-9]{7,}' &&
         ! command -v termux-setup-storage
     then
         $NVIMCMD -c "TSInstall all | qa"
@@ -102,11 +102,13 @@ install_providers() {
             sudo pip$x install neovim pynvim
         fi
     done
-    if ! npm list -g | grep 'neovim'; then
-        sudo npm install -g neovim
-    fi
-    if ! gem list | grep 'neovim'; then
-        sudo gem install neovim
+    if ! command -v nvim; then
+        if ! npm list -g | grep 'neovim'; then
+            sudo npm install -g neovim
+        fi
+        if ! gem list | grep 'neovim'; then
+            sudo gem install neovim
+        fi
     fi
 }
 
@@ -126,7 +128,7 @@ main() {
 
 
 if [ "$0" = "$BASH_SOURCE" ]; then
-    check_install_nix
+    check_nix_install
     check_dependencies
     install_providers
     main "$@"
