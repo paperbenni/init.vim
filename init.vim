@@ -38,15 +38,48 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
     Plug 'jiangmiao/auto-pairs'
     Plug 'psliwka/vim-smoothie'
-    Plug 'vim-airline/vim-airline'
+    Plug 'itchyny/lightline.vim'
+    Plug 'mengelbrecht/lightline-bufferline'
     Plug 'lervag/vimtex'
 call plug#end()
 
+  let g:lightline = {
+        \ 'component_function': {
+        \   'filetype': 'MyFiletype',
+        \   'fileformat': 'MyFileformat',
+        \   'gitbranch': 'FugitiveHead'
+        \ }, 
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ],
+        \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+        \ },
+        \ 'colorscheme': 'onedark', 
+        \ 'tabline': {
+        \   'left': [ ['buffers'] ],
+        \   'right': [ ['close'] ]
+        \ },
+        \ 'component_expand': {
+        \   'buffers': 'lightline#bufferline#buffers'
+        \ },
+        \ 'component_type': {
+        \   'buffers': 'tabsel'
+        \ },
+  		\ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+		\ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+        \ }
+  
+  function! MyFiletype()
+    return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+  endfunction
+  
+  function! MyFileformat()
+    return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+  endfunction
 
-let g:airline#extensions#whitespace#enabled = 0
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
 let g:netrw_liststyle=3
+set showtabline=2
+set lazyredraw
+
 let g:netrw_banner = 0
 
 set list lcs=tab:\|\ 
