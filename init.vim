@@ -40,6 +40,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'lervag/vimtex'
 call plug#end()
 
+
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
@@ -75,7 +76,7 @@ nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>c :call CocAction('pickColor')<CR>
 nnoremap <leader>d :cd %:p:h<CR>
 nnoremap <leader>e :CocCommand explorer<CR>
-nnoremap <leader>f :CocSearch -S 
+nnoremap <leader>F :CocSearch -S 
 nnoremap <leader>g :Gcd<CR>
 nnoremap <leader>h :GitGutterPreviewHunk<CR>
 nnoremap <leader>w :w<CR>
@@ -128,6 +129,8 @@ set nofoldenable
 
 nmap <leader>i  <Plug>(coc-format)
 nmap <leader><F2> <Plug>(coc-rename)
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 " Use <c-space> to trigger completion.
 if has('nvim')
