@@ -13,10 +13,12 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-eunuch'
     Plug 'xolox/vim-misc'
     Plug 'joshdick/onedark.vim'
-    Plug 'nvim-lua/popup.nvim'
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim', { 'on': 'Telescope' }
-    Plug 'nvim-treesitter/nvim-treesitter'
+    if has('lua')
+        Plug 'nvim-lua/popup.nvim'
+        Plug 'nvim-lua/plenary.nvim'
+        Plug 'nvim-telescope/telescope.nvim', { 'on': 'Telescope' }
+        Plug 'nvim-treesitter/nvim-treesitter'
+    endif
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-surround'
     Plug 'sbdchd/neoformat', { 'on': 'Neoformat' }
@@ -101,17 +103,6 @@ nmap <leader><tab> <plug>(fzf-maps-n)
 if has('lua')
     lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
 endif
-
-nmap <leader>1 <Plug>BufTabLine.Go(1)
-nmap <leader>2 <Plug>BufTabLine.Go(2)
-nmap <leader>3 <Plug>BufTabLine.Go(3)
-nmap <leader>4 <Plug>BufTabLine.Go(4)
-nmap <leader>5 <Plug>BufTabLine.Go(5)
-nmap <leader>6 <Plug>BufTabLine.Go(6)
-nmap <leader>7 <Plug>BufTabLine.Go(7)
-nmap <leader>8 <Plug>BufTabLine.Go(8)
-nmap <leader>9 <Plug>BufTabLine.Go(9)
-nmap <leader>0 <Plug>BufTabLine.Go(10)
 
 
 function! s:show_documentation()

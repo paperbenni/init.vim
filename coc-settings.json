@@ -1,4 +1,5 @@
 {
+        "explorer.icon.enableNerdfont": true, 
         "diagnostic-languageserver.filetypes": {
                 // lint `sh` (includes `bash`) files
                 "sh": "shellcheck"
