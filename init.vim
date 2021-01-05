@@ -13,7 +13,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-eunuch'
     Plug 'xolox/vim-misc'
     Plug 'joshdick/onedark.vim'
-    if has('lua')
+    if exists(':lua')
         Plug 'nvim-lua/popup.nvim'
         Plug 'nvim-lua/plenary.nvim'
         Plug 'nvim-telescope/telescope.nvim', { 'on': 'Telescope' }

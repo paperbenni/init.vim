@@ -8,6 +8,7 @@ install_plugins() {
     echo "installing all plugins"
 
     $NVIMCMD -c "PlugInstall | qa"
+    $NVIMCMD -c "PlugClean | qa"
 
     if 
         grep -i memtotal /proc/meminfo |
@@ -64,26 +65,26 @@ check_nix_install() {
     if ! command -v pip3 && ! python3 -c "import neovim"; then
         nix-env -i -E 'f: with import <nixpkgs> { }; (python3.withPackages(ps: [ ps.pynvim ] ))'
     fi
-    if ! command -v $NVIMCMD; then
+    if ! command -v "$NVIMCMD"; then
         nix-env -i neovim
     fi
     if ! command -v npm; then
         nix-env -i nodejs
     fi
-    if ! command -v $CURLCMD; then
+    if ! command -v "$CURLCMD"; then
         nix-env -i curl
     fi
 }
 
 check_dependencies() {
-    checkcommand $CURLCMD
+    checkcommand "$CURLCMD"
     checkcommand npm
     checkcommand node
 }
 
 backup_config() {
     cd || exit 1
-    mv .config/nvim .config/$(date '+%y%m%d%H%M%S')_nvim_backup 2>/dev/null
+    mv .config/nvim .config/"$(date '+%y%m%d%H%M%S')"_nvim_backup 2>/dev/null
     mkdir -p .config/nvim
 }
 
