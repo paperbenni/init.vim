@@ -17,27 +17,27 @@ install_plugins() {
         ! command -v termux-setup-storage
     then
         $NVIMCMD -c "TSInstall all | qa"
-        COCLIST="$COCLIST tabnine"
+        COCLIST="$COCLIST coc-tabnine"
     else
         echo "skipping heavy stuff"
     fi
 
-    $NVIMCMD -c "CoCInstall ${COCLIST:-} $(echo '
-       marketplace
-       sh
-       vimlsp
-       diagnostic
-       clangd
-       python
-       json
-       java
-       explorer
-       markdownlint
-       html
-       flutter
-       highlight
-       snippets
-       java
+    $NVIMCMD -c "CocInstall ${COCLIST:-} $(echo '
+       coc-marketplace
+       coc-sh
+       coc-vimlsp
+       coc-diagnostic
+       coc-clangd
+       coc-python
+       coc-json
+       coc-java
+       coc-explorer
+       coc-markdownlint
+       coc-html
+       coc-flutter
+       coc-highlight
+       coc-snippets
+       coc-java
     ' | tr '\n' ' ')"
 }
 
