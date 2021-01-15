@@ -41,6 +41,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'itchyny/lightline.vim'
     Plug 'mengelbrecht/lightline-bufferline'
     Plug 'lervag/vimtex'
+    Plug 'junegunn/vim-easy-align'
 call plug#end()
 
   let g:lightline = {
@@ -100,6 +101,12 @@ syntax on
 colorscheme onedark
 map <SPACE> <leader>
 set hidden
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 set inccommand=split
 
