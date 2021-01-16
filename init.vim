@@ -140,7 +140,7 @@ nnoremap <leader>, :bp<CR>
 
 nmap <leader><tab> <plug>(fzf-maps-n)
 
-if has('lua')
+if exists(':lua')
     lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
 endif
 
