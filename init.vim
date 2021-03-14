@@ -18,6 +18,8 @@ call plug#begin('~/.vim/plugged')
         Plug 'nvim-lua/plenary.nvim'
         Plug 'nvim-telescope/telescope.nvim', { 'on': 'Telescope' }
         Plug 'nvim-treesitter/nvim-treesitter'
+        Plug 'akinsho/nvim-bufferline.lua'
+        Plug 'hoob3rt/lualine.nvim'
     endif
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-surround'
@@ -38,36 +40,17 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
     Plug 'jiangmiao/auto-pairs'
     Plug 'psliwka/vim-smoothie'
-    Plug 'itchyny/lightline.vim'
-    Plug 'mengelbrecht/lightline-bufferline'
     Plug 'lervag/vimtex'
     Plug 'junegunn/vim-easy-align'
 call plug#end()
 
-  let g:lightline = {
-        \ 'component_function': {
-        \   'filetype': 'MyFiletype',
-        \   'fileformat': 'MyFileformat',
-        \   'gitbranch': 'FugitiveHead'
-        \ }, 
-        \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ],
-        \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-        \ },
-        \ 'colorscheme': 'onedark', 
-        \ 'tabline': {
-        \   'left': [ ['buffers'] ],
-        \   'right': [ ['close'] ]
-        \ },
-        \ 'component_expand': {
-        \   'buffers': 'lightline#bufferline#buffers'
-        \ },
-        \ 'component_type': {
-        \   'buffers': 'tabsel'
-        \ },
-  		\ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
-		\ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
-        \ }
+let g:lualine = {
+    \'options' : {
+    \  'theme' : 'onedark',
+    \  'icons_enabled' : v:true,
+    \}
+    \}
+
   
   function! MyFiletype()
     return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
@@ -142,6 +125,8 @@ nmap <leader><tab> <plug>(fzf-maps-n)
 
 if exists(':lua')
     lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
+    lua require'bufferline'.setup{}
+    lua require("lualine").status()
 endif
 
 
