@@ -20,6 +20,7 @@ call plug#begin('~/.vim/plugged')
         Plug 'nvim-treesitter/nvim-treesitter'
         Plug 'akinsho/nvim-bufferline.lua'
         Plug 'hoob3rt/lualine.nvim'
+        Plug 'Yggdroot/indentLine'
     endif
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-surround'
