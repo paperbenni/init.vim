@@ -125,8 +125,7 @@ nmap <leader><tab> <plug>(fzf-maps-n)
 
 if exists(':lua')
     lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
-    lua require'bufferline'.setup{}
-    lua require("lualine").status()
+    lua require("lualine").setup()
 endif
 
 
