@@ -62,6 +62,7 @@ let g:lualine = {
   endfunction
 
 let g:netrw_liststyle=3
+let g:neovide_cursor_vfx_mode = "sonicboom"
 set showtabline=2
 set lazyredraw
 
@@ -124,9 +125,17 @@ nnoremap <leader>, :bp<CR>
 
 nmap <leader><tab> <plug>(fzf-maps-n)
 
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
 if exists(':lua')
     lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
     lua require("lualine").setup()
+    lua require'bufferline'.setup{}
 endif
 
 
