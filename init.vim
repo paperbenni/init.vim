@@ -43,6 +43,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'psliwka/vim-smoothie'
     Plug 'lervag/vimtex'
     Plug 'junegunn/vim-easy-align'
+    Plug 'puremourning/vimspector'
 call plug#end()
 
 let g:lualine = {

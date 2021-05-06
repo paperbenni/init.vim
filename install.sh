@@ -28,7 +28,7 @@ install_plugins() {
        coc-vimlsp
        coc-diagnostic
        coc-clangd
-       coc-python
+       coc-jedi
        coc-json
        coc-java
        coc-explorer
