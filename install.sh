@@ -38,6 +38,9 @@ install_plugins() {
        coc-highlight
        coc-snippets
        coc-java
+       coc-tailwindcss
+       coc-tsserver
+       coc-tsdetect
     ' | tr '\n' ' ')"
 }
 
