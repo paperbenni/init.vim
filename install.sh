@@ -1,8 +1,15 @@
 #!/usr/bin/env bash
 # Install paperbenni's Neovim.
 COCLIST="${COCLIST:-}"
-NVIMCMD=${nvimcmd:-nvim} 
+NVIMCMD=${nvimcmd:-nvim}
 CURLCMD=${curlcmd:-curl}
+
+cocinstall() {
+    echo "installing completion $1"
+    if ! grep -q "\"$1\":" "$HOME/.config/coc/extensions/package.json"; then
+        $NVIMCMD -c "CocInstall -sync $1 | qa" &>/dev/null
+    fi
+}
 
 install_plugins() {
     echo "installing all plugins"
@@ -10,38 +17,36 @@ install_plugins() {
     $NVIMCMD -c "PlugInstall | qa"
     $NVIMCMD -c "PlugClean | qa"
 
-    if 
+    if
         grep -i memtotal /proc/meminfo |
             grep -o '[0-9]*' |
             grep -Eq '[0-9]{7,}' &&
-        ! command -v termux-setup-storage
+            ! command -v termux-setup-storage
     then
-        $NVIMCMD -c "TSInstall all | qa"
-        COCLIST="$COCLIST coc-tabnine"
+        cocinstall coc-tabnine
     else
         echo "skipping heavy stuff"
     fi
 
-    $NVIMCMD -c "CocInstall ${COCLIST:-} $(echo '
-       coc-marketplace
-       coc-sh
-       coc-vimlsp
-       coc-diagnostic
-       coc-clangd
-       coc-jedi
-       coc-json
-       coc-java
-       coc-explorer
-       coc-markdownlint
-       coc-html
-       coc-flutter
-       coc-highlight
-       coc-snippets
-       coc-java
-       coc-tailwindcss
-       coc-tsserver
-       coc-tsdetect
-    ' | tr '\n' ' ')"
+    cocinstall coc-marketplace
+    cocinstall coc-sh
+    cocinstall coc-vimlsp
+    cocinstall coc-diagnostic
+    cocinstall coc-clangd
+    cocinstall coc-jedi
+    cocinstall coc-json
+    cocinstall coc-java
+    cocinstall coc-explorer
+    cocinstall coc-markdownlint
+    cocinstall coc-html
+    cocinstall coc-flutter
+    cocinstall coc-highlight
+    cocinstall coc-snippets
+    cocinstall coc-java
+    cocinstall coc-tailwindcss
+    cocinstall coc-tsserver
+    cocinstall coc-tsdetect
+
 }
 
 install_plug() {
@@ -130,11 +135,9 @@ main() {
     echo "finished installing paperbenni's neovim config"
 }
 
-
 if [ "$0" = "$BASH_SOURCE" ]; then
     check_nix_install
     check_dependencies
     install_providers
     main "$@"
 fi
-
