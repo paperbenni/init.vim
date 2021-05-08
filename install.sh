@@ -24,6 +24,7 @@ install_plugins() {
             ! command -v termux-setup-storage
     then
         cocinstall coc-tabnine
+        $NVIMCMD -c 'TSInstallSync all'
     else
         echo "skipping heavy stuff"
     fi

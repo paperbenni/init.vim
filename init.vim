@@ -137,7 +137,6 @@ if exists(':lua')
     lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
     lua require("lualine").setup()
     lua require'bufferline'.setup{}
-    TSInstall all
 endif
 
 
