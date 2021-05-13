@@ -7,15 +7,15 @@ CURLCMD=${curlcmd:-curl}
 cocinstall() {
     echo "installing completion $1"
     if ! grep -q "\"$1\":" "$HOME/.config/coc/extensions/package.json"; then
-        $NVIMCMD -c "CocInstall -sync $1 | qa" &>/dev/null
+        $NVIMCMD +"CocInstall -sync $1" +qall &>/dev/null
     fi
 }
 
 install_plugins() {
     echo "installing all plugins"
 
-    $NVIMCMD -c "PlugInstall | qa"
-    $NVIMCMD -c "PlugClean | qa"
+    $NVIMCMD +"PlugInstall" +"qall"
+    $NVIMCMD +"PlugClean" +qall
 
     if
         grep -i memtotal /proc/meminfo |
@@ -24,7 +24,7 @@ install_plugins() {
             ! command -v termux-setup-storage
     then
         cocinstall coc-tabnine
-        $NVIMCMD -c 'TSInstallSync all'
+        $NVIMCMD +'TSInstallSync all' +qall
     else
         echo "skipping heavy stuff"
     fi
