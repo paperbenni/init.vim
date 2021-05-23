@@ -24,7 +24,8 @@ install_plugins() {
             ! command -v termux-setup-storage
     then
         cocinstall coc-tabnine
-        $NVIMCMD +'TSInstallSync all' +qall
+        echo 'installing treesitter parsers'
+        $NVIMCMD +'silent! TSInstallSync all' +qall &> /dev/null
     else
         echo "skipping heavy stuff"
     fi
@@ -40,6 +41,7 @@ install_plugins() {
     cocinstall coc-explorer
     cocinstall coc-markdownlint
     cocinstall coc-html
+    cocinstall coc-emmet
     cocinstall coc-flutter
     cocinstall coc-highlight
     cocinstall coc-snippets

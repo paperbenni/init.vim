@@ -21,6 +21,7 @@ call plug#begin('~/.vim/plugged')
         Plug 'akinsho/nvim-bufferline.lua'
         Plug 'hoob3rt/lualine.nvim'
         Plug 'Yggdroot/indentLine'
+        Plug 'folke/which-key.nvim'
     endif
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-surround'
