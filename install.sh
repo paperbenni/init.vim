@@ -97,6 +97,7 @@ backup_config() {
     cd || exit 1
     mv .config/nvim .config/"$(date '+%y%m%d%H%M%S')"_nvim_backup 2>/dev/null
     mkdir -p .config/nvim
+    mkdir -p .config/bat
 }
 
 install_cfg_files() {
@@ -104,6 +105,7 @@ install_cfg_files() {
     RAWHUB="https://raw.githubusercontent.com/paperbenni/nvim/master"
 
     $CURLCMD -s "$RAWHUB/init.vim" >.config/nvim/init.vim
+    $CURLCMD -s "$RAWHUB/batconfig" >.config/bat/config
     $CURLCMD -s "$RAWHUB/coc-settings.json" >.config/nvim/coc-settings.json
 }
 
