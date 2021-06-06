@@ -102,6 +102,7 @@ command! -bang ProjectFiles call fzf#vim#files('~/workspace', <bang>0)
 nnoremap <leader><SPACE> :Files<CR>
 nnoremap <leader>a :Startify<CR>
 nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>C gg0VG"+y<CR>
 nnoremap <leader>c :call CocAction('pickColor')<CR>
 nnoremap <leader>d :cd %:p:h<CR>
 nnoremap <leader>e :CocCommand explorer<CR>
