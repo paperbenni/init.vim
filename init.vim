@@ -47,12 +47,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'puremourning/vimspector'
 call plug#end()
 
-let g:lualine = {
-    \'options' : {
-    \  'theme' : 'onedark',
-    \  'icons_enabled' : v:true,
-    \}
-    \}
 
   
   function! MyFiletype()
@@ -136,9 +130,12 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 if exists(':lua')
-    lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
-    lua require("lualine").setup()
-    lua require'bufferline'.setup{}
+    lua << EOF
+    require('lualine').setup{ options = { theme = 'onedark', icons_enabled = true }}
+    require'bufferline'.setup{}
+    require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
+EOF
+
 endif
 
 
