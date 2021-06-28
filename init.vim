@@ -105,7 +105,7 @@ nnoremap <leader>g :Gcd<CR>
 nnoremap <leader>h :GitGutterPreviewHunk<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>o :ProjectFiles<CR>
-nnoremap <leader>l :Telescope live_grep<CR>
+nnoremap <leader>l :Rg<CR>
 nnoremap <leader>L :Lines<CR>
 nnoremap <leader>r :Tags<CR>
 nnoremap <leader>s :G<CR>
