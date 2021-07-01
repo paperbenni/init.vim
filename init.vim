@@ -59,6 +59,20 @@ call plug#end()
 
 let g:netrw_liststyle=3
 let g:neovide_cursor_vfx_mode = "sonicboom"
+
+
+
+let g:vimtex_compiler_latexmk_engines = {
+    \ '_'                : '-lualatex',
+    \ 'pdflatex'         : '-pdf',
+    \ 'dvipdfex'         : '-pdfdvi',
+    \ 'lualatex'         : '-lualatex',
+    \ 'xelatex'          : '-xelatex',
+    \ 'context (pdftex)' : '-pdf -pdflatex=texexec',
+    \ 'context (luatex)' : '-pdf -pdflatex=context',
+    \ 'context (xetex)'  : '-pdf -pdflatex=''texexec --xtx''',
+    \}
+
 set showtabline=2
 set lazyredraw
 
