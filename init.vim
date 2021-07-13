@@ -33,7 +33,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'ryanoasis/vim-devicons'
     Plug 'szw/vim-maximizer', { 'on': 'MaximizerToggle' }
     Plug 'dbeniamine/cheat.sh-vim', { 'on': 'Cheat' }
-    Plug 'kassio/neoterm', { 'on': 'Ttoggle' }
+    Plug 'kassio/neoterm'
     Plug 'rhysd/vim-grammarous'
     Plug 'preservim/tagbar', { 'on': 'Tagbar' }
     Plug 'mhinz/vim-startify'
@@ -119,6 +119,7 @@ nnoremap <leader>g :Gcd<CR>
 nnoremap <leader>h :GitGutterPreviewHunk<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>o :ProjectFiles<CR>
+nnoremap <leader>t :belowright Ttoggle<CR>
 nnoremap <leader>l :Rg<CR>
 nnoremap <leader>L :Lines<CR>
 nnoremap <leader>r :Tags<CR>
@@ -129,6 +130,7 @@ nnoremap <leader>n :tabnew<CR>
 nnoremap <leader>N :Neoformat<CR>
 nnoremap <leader>m :Marks<CR>
 nnoremap <leader>k :call <SID>show_documentation()<CR>
+nnoremap <leader>x :T 
 nnoremap <leader>z :Goyo<CR>
 
 nnoremap <leader>. :bn<CR>
@@ -142,6 +144,14 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+
 
 if exists(':lua')
     lua << EOF
