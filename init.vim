@@ -3,6 +3,8 @@
 
 set number
 set mouse=a
+let mapleader = " "
+map <SPACE> <leader>
 
 call plug#begin('~/.vim/plugged')
     " essential stuff
@@ -45,7 +47,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'lervag/vimtex'
     Plug 'junegunn/vim-easy-align'
     Plug 'puremourning/vimspector'
-    Plug 'vimwiki/vimwiki'
+    Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 call plug#end()
 
 
@@ -102,7 +104,6 @@ syntax on
 
 
 colorscheme onedark
-map <SPACE> <leader>
 set hidden
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -140,6 +141,7 @@ nnoremap <leader>m :Marks<CR>
 nnoremap <leader>k :call <SID>show_documentation()<CR>
 nnoremap <leader>x :T 
 nnoremap <leader>z :Goyo<CR>
+
 
 nnoremap <leader>. :bn<CR>
 nnoremap <leader>, :bp<CR>
