@@ -15,6 +15,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-eunuch'
     Plug 'xolox/vim-misc'
     Plug 'joshdick/onedark.vim'
+    Plug 'morhetz/gruvbox'
     if exists(':lua')
         Plug 'nvim-lua/popup.nvim'
         Plug 'nvim-lua/plenary.nvim'
@@ -162,6 +163,7 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
+command! Lighttheme colorscheme gruvbox | set background=light
 
 if exists(':lua')
     lua << EOF
