@@ -23,32 +23,31 @@ install_plugins() {
             grep -Eq '[0-9]{7,}' &&
             ! command -v termux-setup-storage
     then
-        cocinstall coc-tabnine
         echo 'installing treesitter parsers'
         $NVIMCMD +'silent! TSInstallSync all' +qall &> /dev/null
+        cocinstall coc-tabnine
+	    cocinstall coc-flutter
+    	cocinstall coc-java
+    	cocinstall coc-json
+    	cocinstall coc-vimlsp
+	    cocinstall coc-tailwindcss
+	    cocinstall coc-tsserver
+	    cocinstall coc-tsdetect
     else
         echo "skipping heavy stuff"
     fi
 
     cocinstall coc-marketplace
     cocinstall coc-sh
-    cocinstall coc-vimlsp
     cocinstall coc-diagnostic
     cocinstall coc-clangd
     cocinstall coc-jedi
-    cocinstall coc-json
-    cocinstall coc-java
     cocinstall coc-explorer
     cocinstall coc-markdownlint
     cocinstall coc-html
     cocinstall coc-emmet
-    cocinstall coc-flutter
     cocinstall coc-highlight
     cocinstall coc-snippets
-    cocinstall coc-java
-    cocinstall coc-tailwindcss
-    cocinstall coc-tsserver
-    cocinstall coc-tsdetect
 
 }
 
