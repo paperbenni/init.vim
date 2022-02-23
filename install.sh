@@ -48,6 +48,8 @@ install_plugins() {
     cocinstall coc-emmet
     cocinstall coc-highlight
     cocinstall coc-snippets
+    cocinstall coc-ltex
+    cocinstall coc-vimtex
 
 }
 
