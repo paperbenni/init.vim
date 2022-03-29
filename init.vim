@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
     " essential stuff
     Plug 'tpope/vim-fugitive'
     Plug 'junegunn/fzf.vim'
+    Plug 'catppuccin/nvim', {'as': 'catppuccin'}
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'tpope/vim-eunuch'
@@ -40,6 +41,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'rhysd/vim-grammarous'
     Plug 'preservim/tagbar', { 'on': 'Tagbar' }
     Plug 'mhinz/vim-startify'
+    Plug 'michal-h21/vim-zettel'
     Plug 'xolox/vim-notes'
     Plug 'machakann/vim-highlightedyank'
     Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
@@ -63,6 +65,8 @@ call plug#end()
 
 let g:netrw_liststyle=3
 let g:neovide_cursor_vfx_mode = "sonicboom"
+
+let g:zettel_format = "%y%m%d-%H%M-%title"
 
 
 
