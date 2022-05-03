@@ -94,8 +94,14 @@ let g:tex_flavor = 'latex'
 let wiki = {}
 let wiki.path = '~/wiki/vimwiki'
 let wiki.automatic_nested_syntaxes = 1
+
+let streamwiki = {}
+let streamwiki.path = '~/streamwiki/vimwiki'
+let streamwiki.automatic_nested_syntaxes = 1
+
+
 let g:vimwiki_conceal_pre = 1
-let g:vimwiki_list = [wiki]
+let g:vimwiki_list = [wiki, streamwiki] " wikilistmarker
 
 
 let $FZF_DEFAULT_OPTS='--reverse --color=dark --color=fg:-1,bg:-1,hl:#c678dd,fg+:#ffffff,bg+:#4b5263,hl+:#d858fe --color=info:#98c379,prompt:#61afef,pointer:#be5046,marker:#e5c07b,spinner:#61afef,header:#61afef'
