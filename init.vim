@@ -30,6 +30,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-surround'
     Plug 'sbdchd/neoformat', { 'on': 'Neoformat' }
+    Plug 'paperbenni/Calendar.vim'
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-commentary'
     Plug 'honza/vim-snippets'
@@ -93,6 +94,8 @@ let g:tex_flavor = 'latex'
 
 let wiki = {}
 let wiki.path = '~/wiki/vimwiki'
+let wiki.syntax = 'markdown'
+let wiki.ext = '.md'
 let wiki.automatic_nested_syntaxes = 1
 
 let streamwiki = {}
