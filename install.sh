@@ -4,6 +4,7 @@ COCLIST="${COCLIST:-}"
 NVIMCMD=${nvimcmd:-nvim}
 CURLCMD=${curlcmd:-curl}
 
+# install coc package headless
 cocinstall() {
     echo "installing completion $1"
     if ! grep -q "\"$1\":" "$HOME/.config/coc/extensions/package.json"; then
@@ -11,6 +12,7 @@ cocinstall() {
     fi
 }
 
+# install vim-plug, coc and treesitter plugins
 install_plugins() {
     echo "installing all plugins"
 
@@ -18,6 +20,7 @@ install_plugins() {
     $NVIMCMD +"PlugClean" +qall
 
     if
+	    # TODO add chrome OS detection
         grep -i memtotal /proc/meminfo |
             grep -o '[0-9]*' |
             grep -Eq '[0-9]{7,}' &&
@@ -25,14 +28,16 @@ install_plugins() {
     then
         echo 'installing treesitter parsers'
         $NVIMCMD +'silent! TSInstallSync all' +qall &> /dev/null
+
         cocinstall coc-tabnine
-	    cocinstall coc-flutter
+	cocinstall coc-flutter
+	
     	cocinstall coc-java
     	cocinstall coc-json
     	cocinstall coc-vimlsp
-	    cocinstall coc-tailwindcss
-	    cocinstall coc-tsserver
-	    cocinstall coc-tsdetect
+	cocinstall coc-tailwindcss
+	cocinstall coc-tsserver
+	cocinstall coc-tsdetect
     else
         echo "skipping heavy stuff"
     fi
@@ -92,6 +97,9 @@ check_dependencies() {
     checkcommand "$CURLCMD"
     checkcommand npm
     checkcommand node
+    # TODO notify nix people of this
+    checkcommand imosid
+    # TODO check node version
 }
 
 backup_config() {
@@ -103,7 +111,7 @@ backup_config() {
 
 install_cfg_files() {
     echo "installing config files"
-    RAWHUB="https://raw.githubusercontent.com/paperbenni/nvim/master"
+    RAWHUB="https://raw.githubusercontent.com/paperbenni/nvim/main"
 
     $CURLCMD -s "$RAWHUB/init.vim" >.config/nvim/init.vim
     $CURLCMD -s "$RAWHUB/batconfig" >.config/bat/config
@@ -121,6 +129,7 @@ install_providers() {
         if ! npm list -g | grep 'neovim'; then
             sudo npm install -g neovim
         fi
+	# TODO check for gem existance
         if ! gem list | grep 'neovim'; then
             sudo gem install neovim
         fi

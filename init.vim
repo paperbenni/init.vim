@@ -10,47 +10,46 @@ call plug#begin('~/.vim/plugged')
     " essential stuff
     Plug 'tpope/vim-fugitive'
     Plug 'junegunn/fzf.vim'
-    Plug 'catppuccin/nvim', {'as': 'catppuccin'}
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'tpope/vim-eunuch'
-    Plug 'xolox/vim-misc'
     Plug 'joshdick/onedark.vim'
     Plug 'morhetz/gruvbox'
-    if exists(':lua')
-        Plug 'nvim-lua/popup.nvim'
-        Plug 'nvim-lua/plenary.nvim'
-        Plug 'nvim-telescope/telescope.nvim', { 'on': 'Telescope' }
-        Plug 'nvim-treesitter/nvim-treesitter'
-        Plug 'akinsho/nvim-bufferline.lua'
-        Plug 'hoob3rt/lualine.nvim'
-        Plug 'Yggdroot/indentLine'
-        Plug 'folke/which-key.nvim'
-    endif
-    Plug 'airblade/vim-gitgutter'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-treesitter/nvim-treesitter'
+    Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
+    Plug 'akinsho/bufferline.nvim'
+
+    Plug 'hoob3rt/lualine.nvim'
     Plug 'tpope/vim-surround'
     Plug 'sbdchd/neoformat', { 'on': 'Neoformat' }
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-commentary'
-    Plug 'honza/vim-snippets'
-    " experimental stuff
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'szw/vim-maximizer', { 'on': 'MaximizerToggle' }
-    Plug 'dbeniamine/cheat.sh-vim', { 'on': 'Cheat' }
-    Plug 'kassio/neoterm'
-    Plug 'rhysd/vim-grammarous'
-    Plug 'preservim/tagbar', { 'on': 'Tagbar' }
-    Plug 'mhinz/vim-startify'
-    Plug 'michal-h21/vim-zettel'
-    Plug 'xolox/vim-notes'
-    Plug 'machakann/vim-highlightedyank'
-    Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-    Plug 'jiangmiao/auto-pairs'
-    Plug 'psliwka/vim-smoothie'
-    Plug 'lervag/vimtex'
-    Plug 'junegunn/vim-easy-align'
-    Plug 'puremourning/vimspector'
     Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+    Plug 'mhinz/vim-startify'
+    Plug 'honza/vim-snippets'
+    Plug 'michal-h21/vim-zettel'
+    Plug 'lervag/vimtex'
+
+    " stuff not included in lightweight installs
+    " HEAVYBEGIN #TODO make this an imosid section
+    Plug 'Yggdroot/indentLine'
+    Plug 'machakann/vim-highlightedyank'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'folke/which-key.nvim'
+    Plug 'rhysd/vim-grammarous'
+    Plug 'psliwka/vim-smoothie'
+    Plug 'puremourning/vimspector'
+    Plug 'dbeniamine/cheat.sh-vim', { 'on': 'Cheat' }
+    Plug 'preservim/tagbar', { 'on': 'Tagbar' }
+    Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+    " HEAVYEND
+
+    " experimental stuff
+    Plug 'szw/vim-maximizer', { 'on': 'MaximizerToggle' }
+    Plug 'kassio/neoterm'
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'junegunn/vim-easy-align'
 call plug#end()
 
 
@@ -64,6 +63,7 @@ call plug#end()
   endfunction
 
 let g:netrw_liststyle=3
+" animated cursor in neovide GUI
 let g:neovide_cursor_vfx_mode = "sonicboom"
 
 let g:zettel_format = "%y%m%d-%H%M-%title"
