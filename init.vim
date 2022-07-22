@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
     " essential stuff
     Plug 'tpope/vim-fugitive'
     Plug 'junegunn/fzf.vim'
+    Plug 'mattn/emmet-vim'
     Plug 'catppuccin/nvim', {'as': 'catppuccin'}
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
