@@ -19,25 +19,27 @@ install_plugins() {
     $NVIMCMD +"PlugInstall" +"qall"
     $NVIMCMD +"PlugClean" +qall
 
+    echo 'installing treesitter parsers'
+    $NVIMCMD +'silent! TSInstallSync all' +qall &> /dev/null
+
     if
-	    # TODO add chrome OS detection
         grep -i memtotal /proc/meminfo |
             grep -o '[0-9]*' |
             grep -Eq '[0-9]{7,}' &&
-            ! command -v termux-setup-storage
+            ! command -v termux-setup-storage && ! [ -e /opt/google/cros-containers/ ]
     then
-        echo 'installing treesitter parsers'
-        $NVIMCMD +'silent! TSInstallSync all' +qall &> /dev/null
+
+        echo "installing heavy stuff"
 
         cocinstall coc-tabnine
-	cocinstall coc-flutter
+        cocinstall coc-flutter
 	
     	cocinstall coc-java
     	cocinstall coc-json
     	cocinstall coc-vimlsp
-	cocinstall coc-tailwindcss
-	cocinstall coc-tsserver
-	cocinstall coc-tsdetect
+        cocinstall coc-tailwindcss
+        cocinstall coc-tsserver
+        cocinstall coc-tsdetect
     else
         echo "skipping heavy stuff"
     fi
