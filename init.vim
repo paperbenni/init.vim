@@ -31,7 +31,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'paperbenni/Calendar.vim'
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-commentary'
-    Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+    Plug 'paperbenni/vimwiki', { 'branch': 'hackydev' }
     Plug 'mhinz/vim-startify'
     Plug 'honza/vim-snippets'
     Plug 'michal-h21/vim-zettel'
@@ -67,6 +67,8 @@ call plug#end()
   function! MyFileformat()
     return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
   endfunction
+
+let g:vimwiki_markdown_link_ext=0
 
 let g:netrw_liststyle=3
 " animated cursor in neovide GUI
