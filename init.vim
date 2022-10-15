@@ -31,7 +31,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'paperbenni/Calendar.vim'
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-commentary'
-    Plug 'paperbenni/vimwiki', { 'branch': 'hackydev' }
+    Plug 'paperbenni/vimwiki', { 'branch': 'dev' }
     Plug 'mhinz/vim-startify'
     Plug 'honza/vim-snippets'
     Plug 'michal-h21/vim-zettel'
@@ -237,6 +237,21 @@ inoremap <silent><expr> <C-l>
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" add the txt: prefix for non-md plain text files that should be opened in vim
+" instead of xdg-open
+function! VimwikiLinkHandler(link)
+  if a:link =~# '^txt:'
+    try
+      " chop off the leading file: - see :h expr-[:] for syntax:
+      execute ':split ' . a:link[4:]
+      return 1
+    catch
+      echo "Failed opening file in vim."
+    endtry
+  endif
+  return 0
 endfunction
 
 
