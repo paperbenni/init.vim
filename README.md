@@ -1,4 +1,7 @@
 # init.vim
+
+# DEPRECATED, use [paperbenni/init.lua](https://github.com/paperbenni/init.lua) instead
+
 This is my neovim init.vim file
 
 ## install
