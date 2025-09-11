@@ -116,8 +116,6 @@ install_cfg_files() {
     RAWHUB="https://raw.githubusercontent.com/paperbenni/nvim/main"
 
     $CURLCMD -s "$RAWHUB/init.vim" >.config/nvim/init.vim
-    $CURLCMD -s "$RAWHUB/batconfig" >.config/bat/config
-    $CURLCMD -s "$RAWHUB/coc-settings.json" >.config/nvim/coc-settings.json
 }
 
 install_providers() {
